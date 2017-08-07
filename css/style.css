@@ -1,0 +1,13 @@
+
+#js-playerPickElement, #js-newGameElement{
+    padding: 20px;
+}
+
+#js-resultsTableElement {
+    padding-top: 20px;
+    font-size: 25px;
+}
+.points{
+    font-size: 30px;
+    background-color: blue;
+}
