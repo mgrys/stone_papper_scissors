@@ -26,7 +26,8 @@ var gameState = 'notStarted', //started // ended
     };
 var newGameElem = document.getElementById('js-newGameElement'),
     pickElem = document.getElementById('js-playerPickElement'),
-    resultsElem = document.getElementById('js-resultsTableElement');
+    resultsElem = document.getElementById('js-resultsTableElement'),
+    modalElem = document.getElementById('js-myModal');
 
 function setGameElements() {
     switch (gameState) {
@@ -37,6 +38,9 @@ function setGameElements() {
             break;
         case 'ended':
             newGameBtn.innerText = 'Jeszcze raz';
+            player.score =0;
+            computer.score =0;
+            setGamePoints();
         case 'notStarted':
         default:
             newGameElem.style.display = 'block';
@@ -124,14 +128,12 @@ function setGamePoints() {
 
 function endGame() {
     if (player.score >= 10) {
-        alert('The Winner is ' + player.name);
         gameState = 'ended';
-        setGamePoints();
+        alert('The Winner is ' + player.name);
         setGameElements();
     } else if (computer.score >= 10) {
-        alert('The Winner is Computer');
         gameState = 'ended';
-        setGamePoints();
+        alert('The Winner is Computer');
         setGameElements();
     }
 }
